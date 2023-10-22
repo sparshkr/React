@@ -3,16 +3,16 @@ import Employee from "./components/Employee";
 
 function App() {
   console.log("List of Employees");
-  const showEmployee = 1;
+  const showEmployee = true;
   return (
     <div className="App">
       {console.log('Inside the return')}
       {showEmployee ? (
         <p>
-          <Employee />
-          <Employee />
-          <Employee />
-          <Employee />
+          <Employee name="Sparsh" role="Intern"/>
+          <Employee name="Abby" />
+          <Employee name="Caleb" role="SDE"/>
+          
         </p>
       ) : (
         <p>You cannot view the Employees</p>
