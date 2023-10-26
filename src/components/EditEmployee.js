@@ -31,7 +31,12 @@ function EditEmployee(props) {
           <Modal.Title>Update Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form id="editModal" class="w-full max-w-sm">
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            handleClose();
+            console.log(props.id,name,role);
+            props.updateEmployee(props.id,name,role);
+          }} id="editModal" class="w-full max-w-sm">
             <div class="md:flex md:items-center mb-6">
               <div class="md:w-1/3">
                 <label
@@ -49,6 +54,7 @@ function EditEmployee(props) {
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);
+                    console.log(name);
                   }}
                 />
               </div>

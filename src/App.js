@@ -25,6 +25,18 @@ function App() {
       img: "https://www.usnews.com/dims4/USNEWS/af66e3c/2147483647/crop/2000x1313+0+0/resize/640x420/quality/85/?url=https%3A%2F%2Fwww.usnews.com%2Fcmsmedia%2Ff9%2Ff1%2Fa6174c87479b8222c09903d7651c%2F190219-softwaredevelopers-stock.jpg",
     },
   ]);
+ 
+  function updateEmployee(id, setName, setRole){
+    // console.log("Inside updateEmployee");
+    const updatedEmployees = employees.map((employee) => {
+      if(id == employee.id){
+        return {...employee , name : setName, role : setRole};
+      }
+      return employee;
+    })
+    setEmployees(updatedEmployees)
+    console.log(employees);
+  }
 
   console.log("List of Employees");
   const showEmployee = true;
@@ -44,11 +56,14 @@ function App() {
             {employees.map((employee) => {
               return (
                 <Employee
-                  key = {uuidv4()}
+                  // key = {uuidv4()}
+                  key = {employee.id}
+                  id = {employee.id}
                   name={employee.name}
                   role={employee.role}
                   // role = {role}
                   img={employee.img}
+                  updateEmployee = {updateEmployee}
                 />
               );
             })}
