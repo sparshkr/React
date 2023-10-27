@@ -5,14 +5,14 @@ import Customer from "./Pages/Customer";
 
 function App() {
   return (
-    <Header>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Header>
         <Routes>
           <Route path="/employees" element={<Employees />} />
           <Route path="/customer" element={<Customer />} />
         </Routes>
-      </BrowserRouter>
-    </Header>
+      </Header>
+    </BrowserRouter>
   );
 }
 
